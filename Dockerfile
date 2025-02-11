@@ -84,17 +84,8 @@ USER ${container_user_uid}:${container_user_gid}
 
 EXPOSE 8099
 
-CMD if [ "$is_glowroot_env" = "present" ]; then \
-    wget "${artifactory_url_env}"/artifactory/libs-release-local/io/mosip/testing/glowroot.zip ; \
-    unzip glowroot.zip ; \
-    rm -rf glowroot.zip ; \
-    sed -i 's/<service_name>/digital-card-service/g' glowroot/glowroot.properties ; \
-    wget -q --show-progress "${iam_adapter_url_env}" -O "${loader_path_env}"/kernel-auth-adapter.jar; \
-    java -Dloader.path="${loader_path_env}" --add-modules=ALL-SYSTEM --add-opens=java.base/java.lang=ALL-UNNAMED -jar -javaagent:glowroot/glowroot.jar -Dspring.cloud.config.label="${spring_config_label_env}" -Dspring.profiles.active="${active_profile_env}" -Dspring.cloud.config.uri="${spring_config_url_env}" digital-card-service.jar ; \
-    else \
+CMD wget "${artifactory_url_env}"/artifactory/libs-release-local/pdf-generator/pdf-generator.zip ; \
+    unzip pdf-generator.zip ; \
+    rm -rf pdf-generator.zip ; \
     wget -q --show-progress "${iam_adapter_url_env}" -O "${loader_path_env}"/kernel-auth-adapter.jar; \
     java -Dloader.path="${loader_path_env}" --add-modules=ALL-SYSTEM --add-opens=java.base/java.lang=ALL-UNNAMED -jar -Dspring.cloud.config.label="${spring_config_label_env}" -Dspring.profiles.active="${active_profile_env}" -Dspring.cloud.config.uri="${spring_config_url_env}" digital-card-service.jar ; \
-    fi
-
-#CMD ["java","-Dspring.cloud.config.label=${spring_config_label_env}","-Dspring.profiles.active=${active_profile_env}","-Dspring.cloud.config.uri=${spring_config_url_env}","-jar","-javaagent:/home/Glowroot/glowroot.jar","print.jar"]
-
