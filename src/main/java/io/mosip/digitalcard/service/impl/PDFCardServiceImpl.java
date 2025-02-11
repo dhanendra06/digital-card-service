@@ -372,7 +372,7 @@ public class PDFCardServiceImpl implements CardGeneratorService {
 
 		} catch (Exception e) {
 			logger.info("ERROR[] :{}",e);
-			logger.error(io.mosip.kernel.pdfgenerator.itext.constant.PDFGeneratorExceptionCodeConstant.PDF_EXCEPTION.getErrorMessage(),e.getMessage()
+			logger.error(PDFGeneratorExceptionCodeConstant.PDF_EXCEPTION.getErrorMessage(),e.getMessage()
 					+ ExceptionUtils.getStackTrace(e));
 		}
 		logger.debug("UinCardGeneratorImpl::generateUinCard()::exit");
