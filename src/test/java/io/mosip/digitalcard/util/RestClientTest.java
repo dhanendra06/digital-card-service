@@ -1,8 +1,7 @@
-package io.mosip.digitalcard.test.util;
+package io.mosip.digitalcard.util;
 
 import io.mosip.digitalcard.constant.ApiName;
 import io.mosip.digitalcard.exception.ApisResourceAccessException;
-import io.mosip.digitalcard.util.RestClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

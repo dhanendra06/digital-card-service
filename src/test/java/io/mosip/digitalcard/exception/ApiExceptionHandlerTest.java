@@ -1,10 +1,7 @@
-package io.mosip.digitalcard.test.exception;
+package io.mosip.digitalcard.exception;
 
 import io.mosip.digitalcard.constant.AuthAdapterErrorCode;
 import io.mosip.digitalcard.constant.DigitalCardServiceErrorCodes;
-import io.mosip.digitalcard.exception.ApiExceptionHandler;
-import io.mosip.digitalcard.exception.DataNotFoundException;
-import io.mosip.digitalcard.exception.DigitalCardServiceException;
 import io.mosip.kernel.core.authmanager.exception.AuthNException;
 import io.mosip.kernel.core.authmanager.exception.AuthZException;
 import jakarta.servlet.http.HttpServletRequest;

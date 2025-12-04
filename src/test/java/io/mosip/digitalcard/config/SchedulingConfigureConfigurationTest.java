@@ -1,6 +1,5 @@
-package io.mosip.digitalcard.test.config;
+package io.mosip.digitalcard.config;
 
-import io.mosip.digitalcard.config.SchedulingConfigurerConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,6 +1,5 @@
-package io.mosip.digitalcard.test.util;
+package io.mosip.digitalcard.util;
 
-import io.mosip.digitalcard.util.CbeffToBiometricUtil;
 import io.mosip.kernel.biometrics.constant.BiometricType;
 import io.mosip.kernel.biometrics.entities.BIR;
 import org.junit.Test;

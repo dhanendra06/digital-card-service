@@ -1,10 +1,8 @@
-package io.mosip.digitalcard.test.util;
+package io.mosip.digitalcard.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import io.mosip.digitalcard.test.DigitalCardServiceTest;
-import io.mosip.digitalcard.util.RestClient;
-import io.mosip.digitalcard.util.Utility;
+import io.mosip.digitalcard.DigitalCardServiceTest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

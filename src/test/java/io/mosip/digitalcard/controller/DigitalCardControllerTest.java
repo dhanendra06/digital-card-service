@@ -1,10 +1,9 @@
-package io.mosip.digitalcard.test.controller;
+package io.mosip.digitalcard.controller;
 
-import io.mosip.digitalcard.controller.DigitalCardController;
 import io.mosip.digitalcard.dto.DataShareResponseDto;
 import io.mosip.digitalcard.dto.DigitalCardStatusResponseDto;
 import io.mosip.digitalcard.service.DigitalCardService;
-import io.mosip.digitalcard.test.DigitalCardServiceTest;
+import io.mosip.digitalcard.DigitalCardServiceTest;
 import io.mosip.kernel.core.http.ResponseWrapper;
 import io.mosip.kernel.core.websub.model.Event;
 import io.mosip.kernel.core.websub.model.EventModel;
