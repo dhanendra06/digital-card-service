@@ -1,7 +1,8 @@
-package io.mosip.digitalcard.util;
+package io.mosip.digitalcard.test.util;
 
 import io.mosip.digitalcard.dto.DataShareDto;
 import io.mosip.digitalcard.dto.DataShareResponseDto;
+import io.mosip.digitalcard.util.DataShareUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,4 +1,4 @@
-package io.mosip.digitalcard.service;
+package io.mosip.digitalcard.test.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.mosip.biometrics.util.ConvertRequestDto;
@@ -8,7 +8,7 @@ import io.mosip.digitalcard.exception.DataNotFoundException;
 import io.mosip.digitalcard.exception.DigitalCardServiceException;
 import io.mosip.digitalcard.exception.IdentityNotFoundException;
 import io.mosip.digitalcard.service.impl.PDFCardServiceImpl;
-import io.mosip.digitalcard.DigitalCardServiceTest;
+import io.mosip.digitalcard.test.DigitalCardServiceTest;
 import io.mosip.digitalcard.util.CbeffToBiometricUtil;
 import io.mosip.digitalcard.util.RestClient;
 import io.mosip.digitalcard.util.TemplateGenerator;

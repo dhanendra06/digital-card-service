@@ -1,4 +1,4 @@
-package io.mosip.digitalcard.util;
+package io.mosip.digitalcard.test.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.mosip.digitalcard.constant.ApiName;
@@ -6,6 +6,8 @@ import io.mosip.digitalcard.dto.CryptomanagerResponseDto;
 import io.mosip.digitalcard.dto.DecryptResponseDto;
 import io.mosip.digitalcard.exception.ApiNotAccessibleException;
 import io.mosip.digitalcard.exception.DataEncryptionFailureException;
+import io.mosip.digitalcard.util.EncryptionUtil;
+import io.mosip.digitalcard.util.RestClient;
 import io.mosip.kernel.core.exception.ServiceError;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,5 +1,7 @@
-package io.mosip.digitalcard.websub;
+package io.mosip.digitalcard.test.websub;
 
+import io.mosip.digitalcard.websub.DigitalCardInitializer;
+import io.mosip.digitalcard.websub.WebSubSubscriptionHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;

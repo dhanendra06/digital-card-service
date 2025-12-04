@@ -1,10 +1,12 @@
-package io.mosip.digitalcard.websub;
+package io.mosip.digitalcard.test.websub;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.lang.reflect.Field;
 
+import io.mosip.digitalcard.websub.CredentialStatusEvent;
+import io.mosip.digitalcard.websub.WebSubSubscriptionHelper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

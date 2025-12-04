@@ -1,4 +1,4 @@
-package io.mosip.digitalcard.service;
+package io.mosip.digitalcard.test.service;
 
 import io.mosip.digitalcard.constant.DigitalCardServiceErrorCodes;
 import io.mosip.digitalcard.controller.DigitalCardController;
@@ -10,8 +10,9 @@ import io.mosip.digitalcard.dto.DataShareDto;
 import io.mosip.digitalcard.entity.DigitalCardTransactionEntity;
 import io.mosip.digitalcard.exception.DigitalCardServiceException;
 import io.mosip.digitalcard.repositories.DigitalCardTransactionRepository;
+import io.mosip.digitalcard.service.CardGeneratorService;
 import io.mosip.digitalcard.service.impl.DigitalCardServiceImpl;
-import io.mosip.digitalcard.DigitalCardServiceTest;
+import io.mosip.digitalcard.test.DigitalCardServiceTest;
 import io.mosip.digitalcard.util.*;
 import io.mosip.digitalcard.websub.WebSubSubscriptionHelper;
 import io.mosip.vercred.CredentialsVerifier;

@@ -1,5 +1,6 @@
-package io.mosip.digitalcard.util;
+package io.mosip.digitalcard.test.util;
 
+import io.mosip.digitalcard.util.TemplateGenerator;
 import io.mosip.kernel.core.templatemanager.exception.TemplateResourceNotFoundException;
 import io.mosip.kernel.core.templatemanager.spi.TemplateManager;
 import io.mosip.kernel.templatemanager.velocity.impl.TemplateManagerImpl;

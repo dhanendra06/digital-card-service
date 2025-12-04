@@ -1,4 +1,4 @@
-package io.mosip.digitalcard.util;
+package io.mosip.digitalcard.test.util;
 
 import io.mosip.digitalcard.constant.ApiName;
 import io.mosip.digitalcard.dto.CredentialRequestDto;
@@ -6,7 +6,10 @@ import io.mosip.digitalcard.dto.CredentialResponse;
 import io.mosip.digitalcard.dto.CredentialStatusResponse;
 import io.mosip.digitalcard.exception.ApisResourceAccessException;
 import io.mosip.digitalcard.exception.DigitalCardServiceException;
-import io.mosip.digitalcard.DigitalCardServiceTest;
+import io.mosip.digitalcard.test.DigitalCardServiceTest;
+import io.mosip.digitalcard.util.CredentialUtil;
+import io.mosip.digitalcard.util.RestClient;
+import io.mosip.digitalcard.util.Utility;
 import io.mosip.kernel.core.http.RequestWrapper;
 import io.mosip.kernel.core.http.ResponseWrapper;
 import org.junit.Test;
