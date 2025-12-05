@@ -43,6 +43,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.argThat;
@@ -180,12 +181,20 @@ public class PDFCardServiceImplTest {
         String qrString = "{\"biometrics\":\"bdata\", \"k\":\"v\"}";
         Map<String, Object> attributes = new HashMap<>();
         JSONObject qrJsonObj = new JSONObject();
+        qrJsonObj.put("biometrics", "bdata");
         qrJsonObj.put("k", "v");
-        when(objectMapper.readValue(anyString(), eq(JSONObject.class))).thenReturn(qrJsonObj);
-        when(qrCodeGenerator.generateQrCode(anyString(), any())).thenReturn("qr".getBytes());
 
-        boolean res = ReflectionTestUtils.invokeMethod(pdfCardService, "setQrCode", qrString, attributes, true);
-        assertEquals(true, res);
+        when(objectMapper.readValue(anyString(), eq(JSONObject.class)))
+                .thenReturn(qrJsonObj);
+
+        when(qrCodeGenerator.generateQrCode(
+                argThat(s -> !s.contains("biometrics")),
+                any())
+        ).thenReturn("qr".getBytes());
+
+        boolean res = Boolean.TRUE.equals(ReflectionTestUtils.invokeMethod(pdfCardService, "setQrCode", qrString, attributes, true));
+
+        assertTrue(res);
         assertNotNull(attributes.get("QrCode"));
     }
 
@@ -257,19 +266,26 @@ public class PDFCardServiceImplTest {
         when(utility.getIdentityJson()).thenReturn("identity.json");
         when(utility.getIdentityMappingJson(anyString(), anyString())).thenReturn("{}");
         when(utility.getDemographicIdentity()).thenReturn("demographicIdentity");
-        lenient().when(objectMapper.readValue(eq("{}"), eq(JSONObject.class))).thenReturn(new JSONObject());
-        when(utility.getJSONObject(any(JSONObject.class), eq("demographicIdentity"))).thenReturn(new JSONObject());
+        lenient().when(objectMapper.readValue(eq("{}"), eq(JSONObject.class)))
+                .thenReturn(new JSONObject());
+        when(utility.getJSONObject(any(JSONObject.class), eq("demographicIdentity")))
+                .thenReturn(new JSONObject());
 
         JSONObject qrJsonForPdfPath2 = new JSONObject();
         qrJsonForPdfPath2.put("UIN", "u");
-        when(objectMapper.readValue(anyString(), eq(JSONObject.class))).thenReturn(qrJsonForPdfPath2);
+        when(objectMapper.readValue(anyString(), eq(JSONObject.class)))
+                .thenReturn(qrJsonForPdfPath2);
 
-        lenient().when(templateGenerator.getTemplate(anyString(), anyMap(), anyString())).thenReturn(null);
+        lenient().when(templateGenerator.getTemplate(anyString(), anyMap(), anyString()))
+                .thenReturn(null);
 
-        DigitalCardServiceException ex = assertThrows(DigitalCardServiceException.class, () ->
-                pdfCardService.generateCard(decryptedCredentialJson, credentialType, password, additionalAttributes)
+        DigitalCardServiceException ex = assertThrows(
+                DigitalCardServiceException.class,
+                () -> pdfCardService.generateCard(decryptedCredentialJson, credentialType, password, additionalAttributes)
         );
-        assertEquals("DCS-011", ex.getErrorCode());
+
+        String expectedErrorCode = DigitalCardServiceErrorCodes.DATASHARE_EXCEPTION.getErrorCode();
+        assertEquals(expectedErrorCode, ex.getErrorCode());
     }
 
     @Test
