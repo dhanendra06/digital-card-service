@@ -109,7 +109,7 @@ jobs:
   sonar_analysis:
     needs: build-maven-digitalcard
     if: "${{  github.event_name != 'pull_request' }}"
-    uses: rajapandi1234/kattu/.github/workflows/maven-sonar-analysis.yml@patch-10
+    uses: mosip/kattu/.github/workflows/maven-sonar-analysis.yml@master-java21
     with:
       SERVICE_LOCATION: ./
     secrets:
