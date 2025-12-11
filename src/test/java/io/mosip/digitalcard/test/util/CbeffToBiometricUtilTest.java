@@ -28,11 +28,6 @@ public class CbeffToBiometricUtilTest {
     @InjectMocks
     CbeffToBiometricUtil cbeffToBiometricUtil;
 
-    @Before
-    public void setUp() {
-        cbeffToBiometricUtil = new CbeffToBiometricUtil(null);
-    }
-
     @Test
     public void testGetImageBytesSuccess() {
         String cbeffFileString = "validCbeff";
