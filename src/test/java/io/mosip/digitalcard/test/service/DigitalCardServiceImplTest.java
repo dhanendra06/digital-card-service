@@ -10,8 +10,6 @@ import io.mosip.digitalcard.dto.DataShareDto;
 import io.mosip.digitalcard.entity.DigitalCardTransactionEntity;
 import io.mosip.digitalcard.exception.DataNotFoundException;
 import io.mosip.digitalcard.exception.DigitalCardServiceException;
-import io.mosip.digitalcard.exception.JsonParseException;
-import io.mosip.digitalcard.exception.QrcodeGenerationException;
 import io.mosip.digitalcard.repositories.DigitalCardTransactionRepository;
 import io.mosip.digitalcard.service.CardGeneratorService;
 import io.mosip.digitalcard.service.impl.DigitalCardServiceImpl;

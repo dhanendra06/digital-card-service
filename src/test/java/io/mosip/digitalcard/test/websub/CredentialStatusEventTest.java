@@ -4,8 +4,7 @@ import io.mosip.digitalcard.websub.CredentialStatusEvent;
 import io.mosip.digitalcard.websub.StatusEvent;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 public class CredentialStatusEventTest {
 

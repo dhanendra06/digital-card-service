@@ -2,14 +2,11 @@ package io.mosip.digitalcard.test.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.mosip.biometrics.util.ConvertRequestDto;
-import io.mosip.biometrics.util.face.FaceDecoder;
 import io.mosip.digitalcard.constant.DigitalCardServiceErrorCodes;
 import io.mosip.digitalcard.dto.SignatureResponseDto;
-import io.mosip.digitalcard.dto.SimpleType;
 import io.mosip.digitalcard.exception.DataNotFoundException;
 import io.mosip.digitalcard.exception.DigitalCardServiceException;
 import io.mosip.digitalcard.exception.IdentityNotFoundException;
-import io.mosip.digitalcard.service.DigitalCardService;
 import io.mosip.digitalcard.service.impl.PDFCardServiceImpl;
 import io.mosip.digitalcard.test.DigitalCardServiceTest;
 import io.mosip.digitalcard.util.CbeffToBiometricUtil;
@@ -26,7 +23,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
@@ -43,14 +39,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.*;
 
-import org.json.simple.JSONObject;
-
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
-import static org.powermock.api.mockito.PowerMockito.whenNew;
 
 @SpringBootTest(classes = DigitalCardServiceTest.class)
 @RunWith(MockitoJUnitRunner.class)
