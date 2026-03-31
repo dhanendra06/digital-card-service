@@ -77,6 +77,7 @@ public class UtilityTest {
         identity.put("name", "value");
         root.put("identity", identity);
 
+        ReflectionTestUtils.setField(Utility.class, "regProcessorIdentityJson", "");
         ReflectionTestUtils.setField(utility, "configServerFileStorageURL", "http://config/");
         ReflectionTestUtils.setField(utility, "identityJson", "identity.json");
         when(restClient.getForObject("http://config/identity.json", String.class)).thenReturn("{json}");
