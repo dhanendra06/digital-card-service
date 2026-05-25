@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS mosip_digitalcard;
+DROP DATABASE IF EXISTS :mosipdbname;
 

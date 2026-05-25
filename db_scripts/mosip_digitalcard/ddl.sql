@@ -1,4 +1,4 @@
-\c mosip_digitalcard
+\c :mosipdbname
 
 
 \ir ddl/digitalcard_transaction.sql

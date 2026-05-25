@@ -1,1 +1,1 @@
-drop role if exists digitalcarduser;
+drop role if exists :dbuname;
