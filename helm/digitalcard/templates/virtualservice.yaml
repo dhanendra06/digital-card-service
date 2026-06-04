@@ -18,12 +18,6 @@ spec:
   {{- include "common.tplvalues.render" ( dict "value" .Values.istio.gateways "context" $ ) | nindent 4 }}
   http:
     - match:
-        - method:
-            exact: POST
-        - uri:
-            prefix: {{ .Values.istio.prefix }}
-        - method:
-            exact: GET
         - uri:
             prefix: {{ .Values.istio.prefix }}
       route:
