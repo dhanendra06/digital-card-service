@@ -1,4 +1,4 @@
-\c mosip_master 
+\c mosip_digitalcard
 
 GRANT CONNECT
    ON DATABASE mosip_digitalcard
